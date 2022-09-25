@@ -26,16 +26,14 @@ object AppModule {
         ).build()
     }
 
-    @Binds
+    @Provides
     @Singleton
     fun getApi(retrofit: Retrofit): ShmotkebiApi {
         return retrofit.create(ShmotkebiApi::class.java)
     }
 
-    @Binds
+    @Provides
     @Singleton
-    fun getShmotkebiRepository(api: ShmotkebiApi): ShmotkepiRepository{
-        return ShmotkepiRepositoryImpl(api)
-    }
+    fun getShmotkebiRepository(api: ShmotkebiApi): ShmotkepiRepository = ShmotkepiRepositoryImpl(api)
 
 }

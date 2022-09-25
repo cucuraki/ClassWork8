@@ -1,4 +1,4 @@
-package com.example.classwork8.extensions
+package com.example.classwork8.common.extensions
 
 import android.widget.ImageView
 import com.bumptech.glide.Glide

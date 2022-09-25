@@ -11,9 +11,12 @@ import kotlinx.coroutines.flow.Flow
 interface ShmotkebiDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun addShmotka(shmotka: Shmotka)
+    suspend fun addShmotkebi(vararg shmotkebi: Shmotka)
 
     @Query("SELECT * from shmotka_table")
     fun readAllDate(): Flow<List<Shmotka>>
+
+    @Query("Delete from shmotka_table")
+    suspend fun deleteAll()
 
 }
